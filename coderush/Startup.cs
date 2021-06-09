@@ -30,9 +30,11 @@ namespace coderush
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //string connectionString = Configuration.GetConnectionString("PublishConnection");
+            string connectionString = Configuration.GetConnectionString("DebuggingConnection");
             services.AddControllersWithViews();
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+                  options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
             // Get Identity Default Options
             IConfigurationSection identityDefaultOptionsConfigurationSection = Configuration.GetSection("IdentityDefaultOptions");
