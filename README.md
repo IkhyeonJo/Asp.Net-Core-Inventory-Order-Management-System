@@ -6,7 +6,7 @@ Project example Asp.Net Core Mvc implementation of inventory order management sy
 ![inventory](coderush/wwwroot/images/scm7.png)
 
 
-# Featuressss
+# Features
 
 - Asp.Net Core Mvc
 - EF / Entity Framework
